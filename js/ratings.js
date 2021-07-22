@@ -17,15 +17,14 @@ elements.forEach(element => {
     ratings.sum = ratings.sum + parseInt(element.value)*rating;
 });
 
-if (ratings.count!==0) {
+if (ratings.count !== 0) {
     ratings.average = ratings.sum / ratings.count;
 }
 
 return ratings;
 };
 
-document.addEventListener('change', ()=>{
+document.addEventListener('change', () => {
     const ratings = collect_ratings();
-    document.querySelectorAll('#average') = ratings.avereage;
-    ratings.average = toFixed(2);
+    document.querySelector('#average').value = ratings.average.toFixed(2);
 });
